@@ -10,7 +10,11 @@ import com.mycompany.process.Process;
 import java.util.List;
 import javax.swing.JPanel;
 import java.awt.*;
+import java.util.ArrayList;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JViewport;
 
 /**
@@ -38,6 +42,7 @@ public class processConfig extends javax.swing.JPanel {
                 menuBar1 = new java.awt.MenuBar();
                 menu1 = new java.awt.Menu();
                 menu2 = new java.awt.Menu();
+                jPanel1 = new javax.swing.JPanel();
                 jLabel1 = new javax.swing.JLabel();
                 jLabel2 = new javax.swing.JLabel();
                 nProcessInput = new javax.swing.JTextField();
@@ -52,13 +57,24 @@ public class processConfig extends javax.swing.JPanel {
                 jSeparator2 = new javax.swing.JSeparator();
                 jSeparator3 = new javax.swing.JSeparator();
                 processObjectPane = new javax.swing.JScrollPane();
-                jPanel1 = new javax.swing.JPanel();
+                processObjectsPanel = new javax.swing.JPanel();
 
                 menu1.setLabel("File");
                 menuBar1.add(menu1);
 
                 menu2.setLabel("Edit");
                 menuBar1.add(menu2);
+
+                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+                jPanel1.setLayout(jPanel1Layout);
+                jPanel1Layout.setHorizontalGroup(
+                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 100, Short.MAX_VALUE)
+                );
+                jPanel1Layout.setVerticalGroup(
+                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 100, Short.MAX_VALUE)
+                );
 
                 jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
                 jLabel1.setText("Processes");
@@ -103,18 +119,18 @@ public class processConfig extends javax.swing.JPanel {
                 processObjectPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
                 processObjectPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-                jPanel1.setLayout(jPanel1Layout);
-                jPanel1Layout.setHorizontalGroup(
-                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                javax.swing.GroupLayout processObjectsPanelLayout = new javax.swing.GroupLayout(processObjectsPanel);
+                processObjectsPanel.setLayout(processObjectsPanelLayout);
+                processObjectsPanelLayout.setHorizontalGroup(
+                        processObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGap(0, 496, Short.MAX_VALUE)
                 );
-                jPanel1Layout.setVerticalGroup(
-                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                processObjectsPanelLayout.setVerticalGroup(
+                        processObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGap(0, 329, Short.MAX_VALUE)
                 );
 
-                processObjectPane.setViewportView(jPanel1);
+                processObjectPane.setViewportView(processObjectsPanel);
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
@@ -131,7 +147,7 @@ public class processConfig extends javax.swing.JPanel {
                                                         .addComponent(processObjectPane)
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(jLabel1)
-                                                                .addGap(0, 417, Short.MAX_VALUE))
+                                                                .addGap(0, 0, Short.MAX_VALUE))
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                         .addComponent(jLabel2)
@@ -151,11 +167,11 @@ public class processConfig extends javax.swing.JPanel {
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(jLabel4)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                                 .addComponent(jLabel5)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                                 .addComponent(jLabel6)
                                                                                 .addGap(0, 0, Short.MAX_VALUE)))))
@@ -185,7 +201,7 @@ public class processConfig extends javax.swing.JPanel {
                                                         .addComponent(jLabel6)))
                                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(processObjectPane, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
+                                .addComponent(processObjectPane)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(randomizeProcess)
                                 .addContainerGap())
@@ -211,6 +227,11 @@ public class processConfig extends javax.swing.JPanel {
         private void generateProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateProcessActionPerformed
 		String inputText = nProcessInput.getText();
 		int numberOfProcesses;
+		List<processPanel>processList = new ArrayList<>();
+		
+//		JViewport viewport = processObjectPane.getViewport();
+		
+
 
 		try{
 			numberOfProcesses = Integer.parseInt(inputText);
@@ -223,12 +244,20 @@ public class processConfig extends javax.swing.JPanel {
 		StringBuilder processInfo = new StringBuilder();
 		for (Process process : processes) {
 		    processInfo.append(process.toString()).append("\n");
+		    processPanel newProcess = new processPanel();
+		    newProcess.processID.setText(Integer.toString(process.id));
+		    newProcess.arrivalTime.setText(Integer.toString(process.arrivalTime));
+		    newProcess.burstTime.setText(Integer.toString(process.burstTime));
+		    newProcess.priority.setText(Integer.toString(process.priority));
+		    processList.add(newProcess);
 		}
+		
 		System.out.println(processInfo);
-		processPanel newProcessPanel = new processPanel();
-		JViewport viewport = processObjectPane.getViewport();
-		viewport.add(newProcessPanel);
-		viewport.revalidate();
+
+		processObjectsPanel.setLayout(new BoxLayout(processObjectsPanel, BoxLayout.Y_AXIS));
+		for(processPanel panel: processList){
+			processObjectsPanel.add(panel);
+		}
         }//GEN-LAST:event_generateProcessActionPerformed
 
 
@@ -250,6 +279,7 @@ public class processConfig extends javax.swing.JPanel {
         private java.awt.MenuBar menuBar1;
         private javax.swing.JTextField nProcessInput;
         private javax.swing.JScrollPane processObjectPane;
+        private javax.swing.JPanel processObjectsPanel;
         private javax.swing.JToggleButton randomizeProcess;
         // End of variables declaration//GEN-END:variables
 }

@@ -27,32 +27,34 @@ public class processPanel extends javax.swing.JPanel {
         private void initComponents() {
 
                 processGenerator1 = new com.mycompany.process.ProcessGenerator();
-                jLabel1 = new javax.swing.JLabel();
-                jLabel2 = new javax.swing.JLabel();
-                jLabel5 = new javax.swing.JLabel();
-                jLabel6 = new javax.swing.JLabel();
+                jSeparator1 = new javax.swing.JSeparator();
+                jSeparator2 = new javax.swing.JSeparator();
+                arrivalTime = new javax.swing.JLabel();
+                processID = new javax.swing.JLabel();
+                burstTime = new javax.swing.JLabel();
+                priority = new javax.swing.JLabel();
 
-                jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                jLabel1.setText("Arrival Time");
-                jLabel1.setAlignmentY(0.0F);
-                jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-                jLabel1.setDoubleBuffered(true);
+                arrivalTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                arrivalTime.setText("Arrival Time");
+                arrivalTime.setAlignmentY(0.0F);
+                arrivalTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                arrivalTime.setDoubleBuffered(true);
 
-                jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                jLabel2.setText("Process ID");
+                processID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                processID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                processID.setText("Process ID");
 
-                jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                jLabel5.setText("Burst Time");
-                jLabel5.setAlignmentY(0.0F);
-                jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-                jLabel5.setDoubleBuffered(true);
+                burstTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                burstTime.setText("Burst Time");
+                burstTime.setAlignmentY(0.0F);
+                burstTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                burstTime.setDoubleBuffered(true);
 
-                jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                jLabel6.setText("Priority");
-                jLabel6.setAlignmentY(0.0F);
-                jLabel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-                jLabel6.setDoubleBuffered(true);
+                priority.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                priority.setText("Priority");
+                priority.setAlignmentY(0.0F);
+                priority.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                priority.setDoubleBuffered(true);
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
@@ -60,13 +62,13 @@ public class processPanel extends javax.swing.JPanel {
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel2)
+                                .addComponent(processID)
                                 .addGap(60, 60, 60)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(arrivalTime, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(burstTime, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(60, 60, 60)
+                                .addComponent(priority, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0))
                 );
                 layout.setVerticalGroup(
@@ -74,26 +76,28 @@ public class processPanel extends javax.swing.JPanel {
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(processID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(arrivalTime, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(burstTime, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(priority, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap())
                 );
 
-                jLabel1.getAccessibleContext().setAccessibleName("arrivalTime");
-                jLabel1.getAccessibleContext().setAccessibleDescription("");
-                jLabel2.getAccessibleContext().setAccessibleName("processID");
-                jLabel5.getAccessibleContext().setAccessibleName("burstTime");
-                jLabel6.getAccessibleContext().setAccessibleName("priority");
+                arrivalTime.getAccessibleContext().setAccessibleName("arrivalTime");
+                arrivalTime.getAccessibleContext().setAccessibleDescription("");
+                processID.getAccessibleContext().setAccessibleName("processID");
+                burstTime.getAccessibleContext().setAccessibleName("burstTime");
+                priority.getAccessibleContext().setAccessibleName("priority");
         }// </editor-fold>//GEN-END:initComponents
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JLabel jLabel1;
-        private javax.swing.JLabel jLabel2;
-        private javax.swing.JLabel jLabel5;
-        private javax.swing.JLabel jLabel6;
+        public javax.swing.JLabel arrivalTime;
+        public javax.swing.JLabel burstTime;
+        private javax.swing.JSeparator jSeparator1;
+        private javax.swing.JSeparator jSeparator2;
+        public javax.swing.JLabel priority;
         private com.mycompany.process.ProcessGenerator processGenerator1;
+        public javax.swing.JLabel processID;
         // End of variables declaration//GEN-END:variables
 }
