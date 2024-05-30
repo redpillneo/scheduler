@@ -23,6 +23,8 @@ import javax.swing.JViewport;
  */
 public class processConfig extends javax.swing.JPanel {
 
+	public List<processPanel>processList = new ArrayList<>();
+	public List<Process> processes = new ArrayList<>();
     /**
      * Creates new form processConfig1
      */
@@ -214,6 +216,11 @@ public class processConfig extends javax.swing.JPanel {
 
     private void clearProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearProcessActionPerformed
 	nProcessInput.setText("");
+	processList.clear();
+	processes.clear();
+	processObjectsPanel.removeAll();
+	processObjectsPanel.revalidate();
+	
     }//GEN-LAST:event_clearProcessActionPerformed
 
     private void randomizeProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_randomizeProcessActionPerformed
@@ -227,7 +234,6 @@ public class processConfig extends javax.swing.JPanel {
         private void generateProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateProcessActionPerformed
 		String inputText = nProcessInput.getText();
 		int numberOfProcesses;
-		List<processPanel>processList = new ArrayList<>();
 		
 //		JViewport viewport = processObjectPane.getViewport();
 		
@@ -240,7 +246,7 @@ public class processConfig extends javax.swing.JPanel {
 			return;
 		}
                 ProcessGenerator processGenerator = new ProcessGenerator();
-		List<Process> processes = processGenerator.generateProcesses(numberOfProcesses);
+		processes = processGenerator.generateProcesses(numberOfProcesses);
 		StringBuilder processInfo = new StringBuilder();
 		for (Process process : processes) {
 		    processInfo.append(process.toString()).append("\n");
@@ -257,7 +263,9 @@ public class processConfig extends javax.swing.JPanel {
 		processObjectsPanel.setLayout(new BoxLayout(processObjectsPanel, BoxLayout.Y_AXIS));
 		for(processPanel panel: processList){
 			processObjectsPanel.add(panel);
+			processObjectsPanel.revalidate();
 		}
+		processObjectPane.revalidate();
         }//GEN-LAST:event_generateProcessActionPerformed
 
 
