@@ -29,10 +29,15 @@ public class processPanel extends javax.swing.JPanel {
                 processGenerator1 = new com.mycompany.process.ProcessGenerator();
                 jSeparator1 = new javax.swing.JSeparator();
                 jSeparator2 = new javax.swing.JSeparator();
+                processID1 = new javax.swing.JLabel();
                 arrivalTime = new javax.swing.JLabel();
                 processID = new javax.swing.JLabel();
                 burstTime = new javax.swing.JLabel();
                 priority = new javax.swing.JLabel();
+
+                processID1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                processID1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                processID1.setText("Process ID");
 
                 arrivalTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 arrivalTime.setText("Arrival Time");
@@ -99,5 +104,6 @@ public class processPanel extends javax.swing.JPanel {
         public javax.swing.JLabel priority;
         private com.mycompany.process.ProcessGenerator processGenerator1;
         public javax.swing.JLabel processID;
+        public javax.swing.JLabel processID1;
         // End of variables declaration//GEN-END:variables
 }

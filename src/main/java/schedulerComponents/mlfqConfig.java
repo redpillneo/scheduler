@@ -4,11 +4,21 @@
  */
 package schedulerComponents;
 
+import com.mycompany.process.Queue;
+import com.mycompany.process.QueueGenerator;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LENOVO
  */
 public class mlfqConfig extends javax.swing.JPanel {
+	public List<queuePanel> queueList = new ArrayList();
+	public List<Queue> queues = new ArrayList<>();
 
     /**
      * Creates new form mlfqConfig1
@@ -29,15 +39,23 @@ public class mlfqConfig extends javax.swing.JPanel {
                 jLabel2 = new javax.swing.JLabel();
                 jTextArea1 = new javax.swing.JTextArea();
                 jTextField1 = new javax.swing.JTextField();
+                jPanel1 = new javax.swing.JPanel();
                 Queues = new javax.swing.JLabel();
                 jLabel1 = new javax.swing.JLabel();
-                jButton1 = new javax.swing.JButton();
-                jButton2 = new javax.swing.JButton();
-                jScrollPane1 = new javax.swing.JScrollPane();
+                generateQueues = new javax.swing.JButton();
+                clearQueues = new javax.swing.JButton();
+                queueObjectPane = new javax.swing.JScrollPane();
+                queueObjectsPanel = new javax.swing.JPanel();
                 jLabel3 = new javax.swing.JLabel();
-                jComboBox1 = new javax.swing.JComboBox<>();
+                priorityPolicy = new javax.swing.JComboBox<>();
                 jLabel4 = new javax.swing.JLabel();
-                jTextField2 = new javax.swing.JTextField();
+                entryQueueNo = new javax.swing.JTextField();
+                nQueueInput = new javax.swing.JTextField();
+                jLabel5 = new javax.swing.JLabel();
+                jSeparator1 = new javax.swing.JSeparator();
+                jLabel6 = new javax.swing.JLabel();
+                jSeparator2 = new javax.swing.JSeparator();
+                jLabel7 = new javax.swing.JLabel();
 
                 jLabel2.setText("jLabel2");
 
@@ -50,66 +68,123 @@ public class mlfqConfig extends javax.swing.JPanel {
                         }
                 });
 
+                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+                jPanel1.setLayout(jPanel1Layout);
+                jPanel1Layout.setHorizontalGroup(
+                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 100, Short.MAX_VALUE)
+                );
+                jPanel1Layout.setVerticalGroup(
+                        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 100, Short.MAX_VALUE)
+                );
+
                 Queues.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
                 Queues.setText("Queues");
 
                 jLabel1.setText("No. of Queues");
 
-                jButton1.setText("Generate");
-                jButton1.addActionListener(new java.awt.event.ActionListener() {
+                generateQueues.setText("Generate");
+                generateQueues.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jButton1ActionPerformed(evt);
+                                generateQueuesActionPerformed(evt);
                         }
                 });
 
-                jButton2.setText("Clear");
-                jButton2.addActionListener(new java.awt.event.ActionListener() {
+                clearQueues.setText("Clear");
+                clearQueues.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jButton2ActionPerformed(evt);
+                                clearQueuesActionPerformed(evt);
                         }
                 });
+
+                queueObjectPane.setHorizontalScrollBar(null);
+
+                javax.swing.GroupLayout queueObjectsPanelLayout = new javax.swing.GroupLayout(queueObjectsPanel);
+                queueObjectsPanel.setLayout(queueObjectsPanelLayout);
+                queueObjectsPanelLayout.setHorizontalGroup(
+                        queueObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 505, Short.MAX_VALUE)
+                );
+                queueObjectsPanelLayout.setVerticalGroup(
+                        queueObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 303, Short.MAX_VALUE)
+                );
+
+                queueObjectPane.setViewportView(queueObjectsPanel);
 
                 jLabel3.setText("Priority Policy");
 
-                jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-                jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+                priorityPolicy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+                priorityPolicy.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jComboBox1ActionPerformed(evt);
+                                priorityPolicyActionPerformed(evt);
                         }
                 });
 
                 jLabel4.setText("Entry Queue");
 
-                jTextField2.addActionListener(new java.awt.event.ActionListener() {
+                entryQueueNo.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jTextField2ActionPerformed(evt);
+                                entryQueueNoActionPerformed(evt);
                         }
                 });
+
+                nQueueInput.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                nQueueInputActionPerformed(evt);
+                        }
+                });
+
+                jLabel5.setText("Queue ID");
+
+                jLabel6.setText("Scheduling Algorithm");
+
+                jLabel7.setText("Quantum");
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
                 layout.setHorizontalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jScrollPane1)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
-                                                .addGap(174, 174, 174)
-                                                .addComponent(jButton1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                                                .addComponent(jButton2))
-                                        .addComponent(Queues, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabel4)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap())
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(jLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel6)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel7)
+                                                .addGap(37, 37, 37))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jLabel1)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(nQueueInput)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(generateQueues)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(clearQueues))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(Queues)
+                                                                        .addGroup(layout.createSequentialGroup()
+                                                                                .addComponent(jLabel3)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                                .addComponent(priorityPolicy, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                                .addComponent(jLabel4)
+                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                                .addComponent(entryQueueNo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addGap(0, 0, Short.MAX_VALUE))
+                                                        .addComponent(queueObjectPane))
+                                                .addContainerGap())))
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,56 +193,112 @@ public class mlfqConfig extends javax.swing.JPanel {
                                 .addComponent(Queues)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jButton1)
-                                        .addComponent(jButton2)
-                                        .addComponent(jLabel1))
+                                        .addComponent(generateQueues)
+                                        .addComponent(clearQueues)
+                                        .addComponent(jLabel1)
+                                        .addComponent(nQueueInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel6)
+                                                .addComponent(jLabel7))
+                                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(queueObjectPane, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel3)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(priorityPolicy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel4)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(entryQueueNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
 
-                jScrollPane1.getAccessibleContext().setAccessibleName("queuesGenPane");
+                queueObjectPane.getAccessibleContext().setAccessibleName("queuesGenPane");
         }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void generateQueuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateQueuesActionPerformed
+	    queueList.clear();
+	    queues.clear();
+	    queueObjectsPanel.removeAll();
+	    String inputText = nQueueInput.getText();
+	    int numberOfQueues;
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+	    try{
+		    numberOfQueues = Integer.parseInt(inputText);
+	    } catch (NumberFormatException e){
+		    JOptionPane.showMessageDialog(this, "Invalid number of queues. Please inoput an integer.", "Error", JOptionPane.ERROR_MESSAGE); 
+		    return;
+	    }
+	    QueueGenerator queueGenerator = new QueueGenerator();
+	    queues = queueGenerator.generateQueues(numberOfQueues);
+	    StringBuilder queueInfo = new StringBuilder();
+	    for (Queue queue: queues){
+		    queueInfo.append(queue.toString()).append("\n");
+		    queuePanel newQueue = new queuePanel();
+		    newQueue.queueID.setText(Integer.toString(queue.id));
+		    queueList.add(newQueue);
+		    
+	    }
+	    System.out.println(queueInfo);
+	    // displaying queues
+	    queueObjectsPanel.setLayout(new BoxLayout(queueObjectsPanel, BoxLayout.Y_AXIS));
+	    for(queuePanel panel: queueList){
+		    queueObjectsPanel.add(panel);
+		    queueObjectsPanel.revalidate();
+	    }
+	    queueObjectPane.revalidate();
+    }//GEN-LAST:event_generateQueuesActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    private void clearQueuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearQueuesActionPerformed
+	    nQueueInput.setText("");
+	    queueList.clear();
+	    queues.clear();
+	    queueObjectsPanel.removeAll();
+	    queueObjectsPanel.revalidate();
+	    queueObjectsPanel.repaint();
+    }//GEN-LAST:event_clearQueuesActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void priorityPolicyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priorityPolicyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_priorityPolicyActionPerformed
+
+    private void entryQueueNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entryQueueNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entryQueueNoActionPerformed
+
+        private void nQueueInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nQueueInputActionPerformed
+		nQueueInputActionPerformed(evt);
+		
+        }//GEN-LAST:event_nQueueInputActionPerformed
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JLabel Queues;
-        private javax.swing.JButton jButton1;
-        private javax.swing.JButton jButton2;
-        private javax.swing.JComboBox<String> jComboBox1;
+        private javax.swing.JButton clearQueues;
+        private javax.swing.JTextField entryQueueNo;
+        private javax.swing.JButton generateQueues;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel2;
         private javax.swing.JLabel jLabel3;
         private javax.swing.JLabel jLabel4;
-        private javax.swing.JScrollPane jScrollPane1;
+        private javax.swing.JLabel jLabel5;
+        private javax.swing.JLabel jLabel6;
+        private javax.swing.JLabel jLabel7;
+        private javax.swing.JPanel jPanel1;
+        private javax.swing.JSeparator jSeparator1;
+        private javax.swing.JSeparator jSeparator2;
         private javax.swing.JTextArea jTextArea1;
         private javax.swing.JTextField jTextField1;
-        private javax.swing.JTextField jTextField2;
+        private javax.swing.JTextField nQueueInput;
+        private javax.swing.JComboBox<String> priorityPolicy;
+        private javax.swing.JScrollPane queueObjectPane;
+        public javax.swing.JPanel queueObjectsPanel;
         // End of variables declaration//GEN-END:variables
 }
