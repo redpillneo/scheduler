@@ -232,6 +232,10 @@ public class processConfig extends javax.swing.JPanel {
         }//GEN-LAST:event_nProcessInputActionPerformed
 
         private void generateProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateProcessActionPerformed
+		processList.clear();
+		processes.clear();
+		processObjectsPanel.removeAll();
+//		clearProcessActionPerformed(evt);
 		String inputText = nProcessInput.getText();
 		int numberOfProcesses;
 		
