@@ -224,11 +224,12 @@ public class processConfig extends javax.swing.JPanel {
     }//GEN-LAST:event_clearProcessActionPerformed
 
     private void randomizeProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_randomizeProcessActionPerformed
-        // TODO add your handling code here:
+	    generateProcessActionPerformed(evt);
     }//GEN-LAST:event_randomizeProcessActionPerformed
 
         private void nProcessInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nProcessInputActionPerformed
 		nProcessInputActionPerformed(evt);
+
         }//GEN-LAST:event_nProcessInputActionPerformed
 
         private void generateProcessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateProcessActionPerformed
