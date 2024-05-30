@@ -232,6 +232,9 @@ public class mlfqConfig extends javax.swing.JPanel {
 
 	    try{
 		    numberOfQueues = Integer.parseInt(inputText);
+		    if (numberOfQueues < 1 || numberOfQueues > 3) {
+			    throw new NumberFormatException("Number out of range");
+			}
 	    } catch (NumberFormatException e){
 		    JOptionPane.showMessageDialog(this, "Invalid number of queues. Please inoput an integer.", "Error", JOptionPane.ERROR_MESSAGE); 
 		    return;

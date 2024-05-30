@@ -244,6 +244,7 @@ public class processConfig extends javax.swing.JPanel {
 
 		try{
 			numberOfProcesses = Integer.parseInt(inputText);
+
 		} catch (NumberFormatException e){
 			JOptionPane.showMessageDialog(this, "Invalid number of processes. Please input an integer.", "Error", JOptionPane.ERROR_MESSAGE);
 			return;
