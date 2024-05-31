@@ -1,5 +1,7 @@
 package Processes;
 
+import MultiLevelQueue.MultiQueueSystem;
+import MultiLevelQueue.SchedulerQueue;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Collections;
@@ -15,45 +17,76 @@ import java.util.Collections;
  */
 
 public class NPPrioAlgo {
-    public void nppAlgo() {
+    public void nppAlgo(SchedulerQueue currentQueue) {
         int cycleCounter = 0;
-        ArrayList<Process> processes = new ArrayList<>();
+        int allocationCounter = 1;
+        boolean isLowest = false;
+        ArrayList<Processes.Process> processes = currentQueue.getQueue();
         Collections.addAll(processes, Process.process);
         
-        // sort by arrival time
+        // Sort by arrival time
         processes.sort(Comparator.comparingInt(Process::getArrivalTime));
 
+        System.out.println("Queue: " +currentQueue.getIndex() +" " +currentQueue.getAllocation());
         while (!processes.isEmpty() || !InitiateProcess.list.isEmpty()) {
-            // add all processes that have arrived
+            
             while (!processes.isEmpty() && processes.get(0).getArrivalTime() <= cycleCounter) {
                 addProcess(processes.remove(0));
             }
             
             if (!InitiateProcess.list.isEmpty()) {
-                Process currentProcess = InitiateProcess.list.pop();
-                System.out.println("Program Executing: Process " + currentProcess.getProcessId() +
-                        " with " + currentProcess.getBurstTime() + " Burst Time");
-
-                int innerCounter = currentProcess.getBurstTime();
-                while (innerCounter != 0) {
+                Process currentProcess = InitiateProcess.list.getFirst();
+                InitiateProcess.list.removeFirst();
+                
+                while (currentProcess.getBurstTime() > 0){
                     System.out.print("Performing at Cycle Time " + cycleCounter + " : ");
-                    System.out.println("Process " + currentProcess.getProcessId());
+                    System.out.println("Process " + currentProcess.getProcessId() +" at Queue: " +currentQueue.getIndex());
                     cycleCounter++;
-                    innerCounter--;
-
-                    // add processes that arrive while running
+                    currentProcess.setBurstTime(currentProcess.getBurstTime() - 1); // Decrement burst time
+                    
+                    //add that have arrived
                     while (!processes.isEmpty() && processes.get(0).getArrivalTime() <= cycleCounter) {
                         addProcess(processes.remove(0));
                     }
+                    //do while constantly checking for the allocation
+                    int innerCounter = currentProcess.getBurstTime();
+                    int allocated = currentQueue.getAllocation();
+                    
+                    if(allocationCounter == allocated) {
+
+                        // demote current process back to the list
+                        isLowest = MultiQueueSystem.transferToNext(currentQueue.getIndex(), isLowest);
+                        allocationCounter = 0;
+
+                        //if lowest, push back to the queue
+                        if(isLowest){
+                            System.out.println("ADDED TO BACK!");
+                            addProcess(currentProcess);
+                        }
+                            
+                        System.out.println("PROCESS DEMOTED");
+
+                        if (!InitiateProcess.list.isEmpty()){
+                            currentProcess = InitiateProcess.list.getFirst();
+                            InitiateProcess.list.removeFirst(); // Set the new current process
+                        }
+                        else {
+                           break;
+                         }
+                    }   
+                allocationCounter++;
                 }
                 System.out.println("Process Done!");
+                allocationCounter = 1;
             } else {
-                //do nothing if none arrived
+                // do nothing
                 System.out.println("Performing at Cycle Time " + cycleCounter + " : ");
                 cycleCounter++;
             }
         }
+         System.out.println("QUEUE DONE!");
     }
+    
     public void addProcess(Process p) {
         int index = 0;
         while (index < InitiateProcess.list.size() && 

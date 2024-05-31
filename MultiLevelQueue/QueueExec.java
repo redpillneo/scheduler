@@ -22,13 +22,8 @@ public class QueueExec {
                 SchedulerQueue currentQueue = system.queues.get(i);
                 a.algoPicker(currentQueue);
             }
+            system.sortQueues();
         } while(!SchedulerQueue.queue.isEmpty());
-        
-        
-        
-        
-        // sort the queues based on priority
-        system.sortQueues();       
-        
+    
     }
 }
