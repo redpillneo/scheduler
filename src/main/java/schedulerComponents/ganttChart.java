@@ -4,6 +4,14 @@
  */
 package schedulerComponents;
 
+import org.jfree.chart.ChartFactory;  
+import org.jfree.chart.ChartPanel;  
+import org.jfree.chart.JFreeChart;  
+import org.jfree.data.category.IntervalCategoryDataset;  
+import org.jfree.data.gantt.Task;  
+import org.jfree.data.gantt.TaskSeries;  
+import org.jfree.data.gantt.TaskSeriesCollection;  
+
 /**
  *
  * @author LENOVO
