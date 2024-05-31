@@ -22,7 +22,6 @@ import javax.swing.JViewport;
  * @author LENOVO
  */
 public class processConfig extends javax.swing.JPanel {
-
 	public List<processPanel>processList = new ArrayList<>();
 	public List<Process> processes = new ArrayList<>();
     /**
@@ -146,7 +145,7 @@ public class processConfig extends javax.swing.JPanel {
                                                 .addGap(0, 0, Short.MAX_VALUE))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(processObjectPane)
+                                                        .addComponent(processObjectPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(jLabel2)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
