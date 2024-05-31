@@ -115,7 +115,7 @@ public class mlfqConfig extends javax.swing.JPanel {
 
                 jLabel3.setText("Priority Policy");
 
-                priorityPolicy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+                priorityPolicy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Higher Before Lower", "Fixed Time Slots"}));
                 priorityPolicy.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 priorityPolicyActionPerformed(evt);
@@ -285,7 +285,7 @@ public class mlfqConfig extends javax.swing.JPanel {
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JLabel Queues;
         private javax.swing.JButton clearQueues;
-        private javax.swing.JTextField entryQueueNo;
+        public javax.swing.JTextField entryQueueNo;
         private javax.swing.JButton generateQueues;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel2;
@@ -300,7 +300,7 @@ public class mlfqConfig extends javax.swing.JPanel {
         private javax.swing.JTextArea jTextArea1;
         private javax.swing.JTextField jTextField1;
         private javax.swing.JTextField nQueueInput;
-        private javax.swing.JComboBox<String> priorityPolicy;
+        public javax.swing.JComboBox<String> priorityPolicy;
         private javax.swing.JScrollPane queueObjectPane;
         public javax.swing.JPanel queueObjectsPanel;
         // End of variables declaration//GEN-END:variables
