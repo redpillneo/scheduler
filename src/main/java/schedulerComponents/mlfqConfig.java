@@ -100,17 +100,7 @@ public class mlfqConfig extends javax.swing.JPanel {
 
                 queueObjectPane.setHorizontalScrollBar(null);
 
-                javax.swing.GroupLayout queueObjectsPanelLayout = new javax.swing.GroupLayout(queueObjectsPanel);
-                queueObjectsPanel.setLayout(queueObjectsPanelLayout);
-                queueObjectsPanelLayout.setHorizontalGroup(
-                        queueObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 505, Short.MAX_VALUE)
-                );
-                queueObjectsPanelLayout.setVerticalGroup(
-                        queueObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 303, Short.MAX_VALUE)
-                );
-
+                queueObjectsPanel.setLayout(new javax.swing.BoxLayout(queueObjectsPanel, javax.swing.BoxLayout.Y_AXIS));
                 queueObjectPane.setViewportView(queueObjectsPanel);
 
                 jLabel3.setText("Priority Policy");
@@ -150,6 +140,9 @@ public class mlfqConfig extends javax.swing.JPanel {
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
+                                                .addComponent(queueObjectPane, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addContainerGap())
+                                        .addGroup(layout.createSequentialGroup()
                                                 .addGap(6, 6, 6)
                                                 .addComponent(jLabel5)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -162,11 +155,11 @@ public class mlfqConfig extends javax.swing.JPanel {
                                                 .addComponent(jLabel7)
                                                 .addGap(37, 37, 37))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(jLabel1)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(nQueueInput)
+                                                                .addComponent(nQueueInput, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addComponent(generateQueues)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -179,9 +172,8 @@ public class mlfqConfig extends javax.swing.JPanel {
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addComponent(jLabel4)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(entryQueueNo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addComponent(queueObjectPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addContainerGap())))
+                                                                .addComponent(entryQueueNo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 );
                 layout.setVerticalGroup(
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,11 +181,12 @@ public class mlfqConfig extends javax.swing.JPanel {
                                 .addContainerGap()
                                 .addComponent(Queues)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(clearQueues)
-                                        .addComponent(jLabel1)
-                                        .addComponent(nQueueInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(generateQueues))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(clearQueues, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel1)
+                                                .addComponent(nQueueInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(generateQueues)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel6)
@@ -223,6 +216,7 @@ public class mlfqConfig extends javax.swing.JPanel {
 	    queueList.clear();
 	    queues.clear();
 	    queueObjectsPanel.removeAll();
+	    queueObjectsPanel.repaint();
 	    String inputText = nQueueInput.getText();
 	    int numberOfQueues;
 
@@ -247,7 +241,6 @@ public class mlfqConfig extends javax.swing.JPanel {
 	    }
 	    System.out.println(queueInfo);
 	    // displaying queues
-	    queueObjectsPanel.setLayout(new BoxLayout(queueObjectsPanel, BoxLayout.Y_AXIS));
 	    for(queuePanel panel: queueList){
 		    queueObjectsPanel.add(panel);
 		    queueObjectsPanel.revalidate();

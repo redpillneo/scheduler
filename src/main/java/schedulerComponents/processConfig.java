@@ -120,17 +120,7 @@ public class processConfig extends javax.swing.JPanel {
                 processObjectPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
                 processObjectPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-                javax.swing.GroupLayout processObjectsPanelLayout = new javax.swing.GroupLayout(processObjectsPanel);
-                processObjectsPanel.setLayout(processObjectsPanelLayout);
-                processObjectsPanelLayout.setHorizontalGroup(
-                        processObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 496, Short.MAX_VALUE)
-                );
-                processObjectsPanelLayout.setVerticalGroup(
-                        processObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 329, Short.MAX_VALUE)
-                );
-
+                processObjectsPanel.setLayout(new javax.swing.BoxLayout(processObjectsPanel, javax.swing.BoxLayout.Y_AXIS));
                 processObjectPane.setViewportView(processObjectsPanel);
 
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -145,7 +135,7 @@ public class processConfig extends javax.swing.JPanel {
                                                 .addGap(0, 0, Short.MAX_VALUE))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(processObjectPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(processObjectPane)
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(jLabel2)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -172,7 +162,7 @@ public class processConfig extends javax.swing.JPanel {
                                                                                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                                 .addComponent(jLabel6)))
-                                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                                                .addGap(0, 105, Short.MAX_VALUE)))
                                                 .addContainerGap())))
                 );
                 layout.setVerticalGroup(
@@ -263,7 +253,6 @@ public class processConfig extends javax.swing.JPanel {
 		
 		System.out.println(processInfo);
 
-		processObjectsPanel.setLayout(new BoxLayout(processObjectsPanel, BoxLayout.Y_AXIS));
 		for(processPanel panel: processList){
 			processObjectsPanel.add(panel);
 			processObjectsPanel.revalidate();
