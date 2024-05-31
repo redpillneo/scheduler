@@ -28,9 +28,9 @@ public class performanceAnalysis extends javax.swing.JPanel {
 
                 jLabel1 = new javax.swing.JLabel();
                 jPanel4 = new javax.swing.JPanel();
-                performanceBlock1 = new schedulerComponents.performanceBlock();
-                performanceBlock2 = new schedulerComponents.performanceBlock();
-                performanceBlock3 = new schedulerComponents.performanceBlock();
+                performanceBlock1 = new schedulerComponents.waitingTimeBlock();
+                performanceBlock2 = new schedulerComponents.waitingTimeBlock();
+                performanceBlock3 = new schedulerComponents.waitingTimeBlock();
                 navigationPanel1 = new schedulerComponents.navigationPanel();
 
                 jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
@@ -43,9 +43,9 @@ public class performanceAnalysis extends javax.swing.JPanel {
                         .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(performanceBlock1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(70, 70, 70)
                                 .addComponent(performanceBlock2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(70, 70, 70)
                                 .addComponent(performanceBlock3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
@@ -69,7 +69,7 @@ public class performanceAnalysis extends javax.swing.JPanel {
                                 .addContainerGap())
                         .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                                 .addComponent(navigationPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 );
                 layout.setVerticalGroup(
@@ -91,8 +91,8 @@ public class performanceAnalysis extends javax.swing.JPanel {
         private javax.swing.JLabel jLabel1;
         private javax.swing.JPanel jPanel4;
         private schedulerComponents.navigationPanel navigationPanel1;
-        private schedulerComponents.performanceBlock performanceBlock1;
-        private schedulerComponents.performanceBlock performanceBlock2;
-        private schedulerComponents.performanceBlock performanceBlock3;
+        private schedulerComponents.waitingTimeBlock performanceBlock1;
+        private schedulerComponents.waitingTimeBlock performanceBlock2;
+        private schedulerComponents.waitingTimeBlock performanceBlock3;
         // End of variables declaration//GEN-END:variables
 }
