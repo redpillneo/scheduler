@@ -34,11 +34,15 @@ public class ganttChart extends javax.swing.JPanel {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
+		    	//TODO Gantt Chart objects
+		        ProcessGanttChart chart = new ProcessGanttChart();
+    	
                 mlfqConfig1 = new schedulerComponents.mlfqConfig();
                 mlfqConfig2 = new schedulerComponents.mlfqConfig();
                 jLabel1 = new javax.swing.JLabel();
-                jScrollPane1 = new javax.swing.JScrollPane();
-
+                jScrollPane1 = new javax.swing.JScrollPane(chart.getChartPanel()); //Set the contents of jScrollPane1 to the gantt chart
+                chart.setSize(jScrollPane1.getViewport().getWidth(), jScrollPane1.getViewport().getHeight()); //Set the width of the gantt chart to the width of the scrollpane
+                
                 jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
                 jLabel1.setText("Gantt Chart");
 
@@ -67,6 +71,7 @@ public class ganttChart extends javax.swing.JPanel {
 
                 jScrollPane1.getAccessibleContext().setAccessibleName("gantChartPane");
                 jScrollPane1.getAccessibleContext().setAccessibleDescription("");
+                
         }// </editor-fold>//GEN-END:initComponents
 
 
