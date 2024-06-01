@@ -48,9 +48,13 @@ public class ProcessGanttChart extends JFrame{
 	private IntervalCategoryDataset getCategoryDataset() {
 		TaskSeries series = new TaskSeries("Scheduled Processes");
 		
+		//TODO Get processlist to place into the taskseries
+		System.out.println(processConfig.processes.size());
+		
+		//Add the processes
 		series.add(new Task("Process 1", new Date(124, 5, 31, 0, 0), new Date(124, 5, 31, 0, 10)));
         series.add(new Task("Process 2", new Date(124, 5, 31, 0, 15), new Date(124, 5, 31, 0, 25)));
-        series.add(new Task("Process 3", new Date(124, 5, 31, 0, 30), new Date(124, 5, 31, 0, 45)));
+        series.add(new Task("Process 3", new Date(124, 5, 31, 0, 30), new Date(124, 5, 31, 0, 80)));
 		
 		TaskSeriesCollection dataset = new TaskSeriesCollection();
 		dataset.add(series);

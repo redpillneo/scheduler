@@ -23,7 +23,7 @@ import javax.swing.JViewport;
  */
 public class processConfig extends javax.swing.JPanel {
 	public List<processPanel>processList = new ArrayList<>();
-	public List<Process> processes = new ArrayList<>();
+	public static List<Process> processes = new ArrayList<>();
     /**
      * Creates new form processConfig1
      */

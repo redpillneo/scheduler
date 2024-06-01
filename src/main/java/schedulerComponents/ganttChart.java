@@ -34,14 +34,12 @@ public class ganttChart extends javax.swing.JPanel {
         // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
-		    	//TODO Gantt Chart objects
-		        ProcessGanttChart chart = new ProcessGanttChart();
+		    	
     	
                 mlfqConfig1 = new schedulerComponents.mlfqConfig();
                 mlfqConfig2 = new schedulerComponents.mlfqConfig();
                 jLabel1 = new javax.swing.JLabel();
-                jScrollPane1 = new javax.swing.JScrollPane(chart.getChartPanel()); //Set the contents of jScrollPane1 to the gantt chart
-                chart.setSize(jScrollPane1.getViewport().getWidth(), jScrollPane1.getViewport().getHeight()); //Set the width of the gantt chart to the width of the scrollpane
+                jScrollPane1 = new javax.swing.JScrollPane(); //Create blank scrollpane
                 
                 jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
                 jLabel1.setText("Gantt Chart");
@@ -74,10 +72,18 @@ public class ganttChart extends javax.swing.JPanel {
                 
         }// </editor-fold>//GEN-END:initComponents
 
-
+    public static void showGanttChart() {
+    	//Gantt Chart objects
+        ProcessGanttChart chart = new ProcessGanttChart();
+        
+    	jScrollPane1.setViewportView(chart.getChartPanel()); //Set the contents of jScrollPane1 to the gantt chart
+        chart.setSize(jScrollPane1.getViewport().getWidth(), jScrollPane1.getViewport().getHeight()); //Set the width of the gantt chart to the width of the scrollpane
+    }
+    
+    
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JLabel jLabel1;
-        private javax.swing.JScrollPane jScrollPane1;
+        private static javax.swing.JScrollPane jScrollPane1;
         private schedulerComponents.mlfqConfig mlfqConfig1;
         private schedulerComponents.mlfqConfig mlfqConfig2;
         // End of variables declaration//GEN-END:variables
