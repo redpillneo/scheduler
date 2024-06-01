@@ -6,11 +6,10 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class SJRFAlgo {
-    int demotedId;
-    int processCounter = 0;
 
     public void sjrfAlgo(MultiLevelQueue.SchedulerQueue currentQueue) {
         int cycleCounter = 0;
+        int allocationCounter = 1;
         boolean isHighest = false;
         boolean isLowest = false;
 
@@ -22,6 +21,7 @@ public class SJRFAlgo {
         // Sort by arrival time
         processes.sort(Comparator.comparingInt(Process::getArrivalTime));
 
+        System.out.println("Queue: " +currentQueue.getIndex() +" " +currentQueue.getAllocation() +" " +currentQueue.getAlgorithm());
         while (!processes.isEmpty() || !InitiateProcess.list.isEmpty()) {
             // Add processes that have arrived
             while (!processes.isEmpty() && processes.get(0).getArrivalTime() <= cycleCounter) {
@@ -43,25 +43,58 @@ public class SJRFAlgo {
                         addProcess(processes.remove(0));
                     }
 
+                    //check allocation
+                    int allocated = currentQueue.getAllocation();
+                    
+
+                    System.out.println("Allocation, Allocated" + allocationCounter +" " +allocated);
+                    if(allocationCounter == allocated){
+                        isLowest = MultiQueueSystem.transferToNext(currentQueue.getIndex(), isLowest);
+                        allocationCounter = 0;
+
+                        //if lowest, push back to the queue
+                        System.out.println(isLowest);
+                        if(isLowest){
+                            System.out.println("ADDED TO BACK!");
+                            addProcess(currentProcess);
+                        }
+                            
+                        System.out.println("PROCESS DEMOTED");
+
+                        if (!InitiateProcess.list.isEmpty()){
+                        currentProcess = InitiateProcess.list.getFirst();
+                        InitiateProcess.list.removeFirst(); // Set the new current process
+                        }
+                        else {
+                           break;
+                        }
+                    }
+                    
                     // Check preemptive condition
                     if (!InitiateProcess.list.isEmpty() && 
                         InitiateProcess.list.getFirst().getBurstTime() < currentProcess.getBurstTime()) {
 
-                         // promote current process back to the list
+                        // promote current process back to the list
                         
-                        //isHighest = MultiQueueSystem.transferToPrevious(currentQueue.getIndex(), isHighest);                       
+                        isHighest = MultiQueueSystem.transferToPrevious(currentQueue.getIndex(), isHighest);                       
                         
                         //if highest, push back to the queue
-                        //if(isHighest){
-                        //    addProcess(currentProcess);
-                        //}
-                        
-                        MultiQueueSystem.transferToNext(currentQueue.getIndex());
+                        System.out.println(isHighest);
+                        if(isHighest){
+                            System.out.println("ADDED TO BACK!");
+                            addProcess(currentProcess);
+                        }
+                        System.out.println("Process Promoted!");
+                        //MultiQueueSystem.transferToNext(currentQueue.getIndex());
                         
                         currentProcess = InitiateProcess.list.getFirst();
                         InitiateProcess.list.removeFirst(); // Set the new current process
+                        allocationCounter = 0;
                     }
+                    allocationCounter++;
                 }
+                System.out.println("PROCESS DONE!");
+                allocationCounter = 1;
                 // If the current process has finished execution, it will not be re-added to the list
                 
             } else {

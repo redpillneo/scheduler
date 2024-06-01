@@ -31,7 +31,20 @@ public class SchedulerQueue {
         return index;
     }
 
+    public int getAllocation() {
+        return allocation;
+    }
+    
+    public void setAllocation(int allocation) {
+        this.allocation = allocation;
+    }
+    
+    public void setIndex(int index) {
+        this.index = index;
+    }
+    
     public boolean addProcess(Processes.Process p) {
+        p.setArrivalTime(0);
         return queue.add(p);
     }
 

@@ -13,7 +13,7 @@ public class Process {
     public static Process[] process;
     
     private final int processId;
-    private final int arrivalTime;
+    private int arrivalTime;
     
     private int burstTime;
     private int priority;
@@ -44,6 +44,10 @@ public class Process {
     }
     public int getPriority(){
         return priority;
+    }
+    
+    public void setArrivalTime(int arrivalTime){
+        this.arrivalTime = arrivalTime;
     }
     
 }
