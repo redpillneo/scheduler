@@ -39,11 +39,14 @@ public class ganttChart extends javax.swing.JPanel {
                 mlfqConfig1 = new schedulerComponents.mlfqConfig();
                 mlfqConfig2 = new schedulerComponents.mlfqConfig();
                 jLabel1 = new javax.swing.JLabel();
+<<<<<<< HEAD
                 jScrollPane1 = new javax.swing.JScrollPane(); //Create blank scrollpane
                 
+=======
                 ganttChartPane = new javax.swing.JScrollPane();
                 proceesBlockPanel = new javax.swing.JPanel();
 
+>>>>>>> scheduling
                 jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
                 jLabel1.setText("Gantt Chart");
 
@@ -73,11 +76,14 @@ public class ganttChart extends javax.swing.JPanel {
                                 .addContainerGap())
                 );
 
+<<<<<<< HEAD
                 jScrollPane1.getAccessibleContext().setAccessibleName("gantChartPane");
                 jScrollPane1.getAccessibleContext().setAccessibleDescription("");
                 
+=======
                 ganttChartPane.getAccessibleContext().setAccessibleName("gantChartPane");
                 ganttChartPane.getAccessibleContext().setAccessibleDescription("");
+>>>>>>> scheduling
         }// </editor-fold>//GEN-END:initComponents
 
     public static void showGanttChart() {
@@ -92,7 +98,10 @@ public class ganttChart extends javax.swing.JPanel {
         // Variables declaration - do not modify//GEN-BEGIN:variables
         public javax.swing.JScrollPane ganttChartPane;
         private javax.swing.JLabel jLabel1;
+<<<<<<< HEAD
         private static javax.swing.JScrollPane jScrollPane1;
+=======
+>>>>>>> scheduling
         private schedulerComponents.mlfqConfig mlfqConfig1;
         private schedulerComponents.mlfqConfig mlfqConfig2;
         public javax.swing.JPanel proceesBlockPanel;
