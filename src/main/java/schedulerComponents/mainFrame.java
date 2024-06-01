@@ -79,6 +79,7 @@ public class mainFrame extends javax.swing.JFrame {
 	public static void main(String args[]) {
 		/* Create and display the form */
 		java.awt.EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				new mainFrame().setVisible(true);
 			}
