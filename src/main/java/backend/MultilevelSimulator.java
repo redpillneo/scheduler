@@ -39,12 +39,12 @@ public class MultilevelSimulator {
 			priorityPolicy = mlfqConfig.getPriorityPolicy();
 			
 			if(priorityPolicy.equals("Higher Before Lower")) {
-				//iterate through the queueList while queue is empty
+				//TODO iterate through the queueList while queue is empty
 				
-				//if the queue is not empty, getHead(schedAlgo) of the queue, display to ganttChart, and decrement its remaining time
+				//TODO if the queue is not empty, getHead(schedAlgo) of the queue, display to ganttChart, and decrement its remaining time
 			}
 			else {
-				//check if there is promotion or demotion
+				//TODO check if there is promotion or demotion
 			}
 		}
 	}
