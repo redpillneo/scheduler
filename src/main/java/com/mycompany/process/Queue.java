@@ -97,6 +97,10 @@ public class Queue {
         return processes.get(0);
     }
 	
+	public ArrayList<Process> getQueueProcesses() {
+		return processes;
+	}
+	
 	public String toString(){
 		return "Queue ID:" + index + ", Algorithm: " + algorithm + ", Quantum: " + quantum;
 	}

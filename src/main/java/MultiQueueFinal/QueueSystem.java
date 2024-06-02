@@ -71,7 +71,7 @@
                 Queue currentQueue = queues.get(queueIndex);
                 if (!currentQueue.isEmpty()) {
                     Process p = currentQueue.poll();
-                    IndividualQueue prevQueue = queues.get(queueIndex - 1);
+                    Queue prevQueue = queues.get(queueIndex - 1);
                     prevQueue.addProcess(p);
                 } else {
                     System.out.println("Queue " + queueIndex + " is empty.");
@@ -83,7 +83,7 @@
         }
 
         public void sortQueuesByIndex() {
-            queues.sort(Comparator.comparingInt(IndividualQueue::getIndex));
+            queues.sort(Comparator.comparingInt(Queue::getIndex));
         }
 
         public static void displayQueues() {
@@ -99,7 +99,7 @@
                 System.out.println("Index: " + queue.getIndex());
                 System.out.println("Algorithm: " + queue.getAlgorithm());
                 System.out.println("Allocation: " + queue.getAllocatedTime());
-                System.out.println("Current objects: " + queue.getQueue());
+                System.out.println("Current objects: " + queue.getQueueProcesses());
             } else {
                 System.out.println("Invalid queue index.");
             }
@@ -169,7 +169,7 @@
         }
 
         public static boolean areAllQueuesEmpty() {
-            for (IndividualQueue queue : queues) {
+            for (Queue queue : queues) {
                 if (!queue.isEmpty()) {
                     return false;
                 }
