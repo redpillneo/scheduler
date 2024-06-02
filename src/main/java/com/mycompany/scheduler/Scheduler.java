@@ -7,21 +7,21 @@ import schedulerComponents.*;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import com.formdev.flatlaf.FlatLightLaf;
+import com.mycompany.process.Queue;
+import com.mycompany.process.Process;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Scheduler {
-	private int speed;
-//	get the time from the gui
     public static void main(String[] args) {
 	    FlatLightLaf.setup();
-//		for(LookAndFeelInfo lafInfo:UIManager.getInstalledLookAndFeels()){
-//			System.out.println(lafInfo.getClassName());
-//		}
 	    mainFrame mainFrame = new mainFrame();
 	    mainFrame.setVisible(true);
+
+	    // get first the data upon start simulation
 	    
-	    speed = navigationPanel.getClockSpeed();
-	    
+
     }
 }
 

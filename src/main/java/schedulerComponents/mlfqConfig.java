@@ -269,6 +269,9 @@ public class mlfqConfig extends javax.swing.JPanel {
 		nQueueInputActionPerformed(evt);
 		
         }//GEN-LAST:event_nQueueInputActionPerformed
+	public List<Queue> getQueueList(){
+		return queues;
+	}
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

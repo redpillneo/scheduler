@@ -259,6 +259,9 @@ public class processConfig extends javax.swing.JPanel {
 		}
 		processObjectPane.revalidate();
         }//GEN-LAST:event_generateProcessActionPerformed
+	public List<Process> getProcessList(){
+		return processes;
+	}
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

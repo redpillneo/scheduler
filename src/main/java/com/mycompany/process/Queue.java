@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.process;
+import java.util.LinkedList;
+import schedulerComponents.QueuePolicy;
 
 /**
  *
@@ -10,13 +12,17 @@ package com.mycompany.process;
  */
 public class Queue {
 	public int id;
-	private String schedAlgo;
-	private int quantum;
+	public String schedAlgo;
+	public int quantum;
+	public QueuePolicy policy;
+	public LinkedList<Process> processes;
 
 	public Queue(int id, String schedAlgo, int quantum){
 		this.id = id;
 		this.schedAlgo = schedAlgo;
 		this.quantum = quantum;
+		this.policy = policy;
+		this.processes = new LinkedList<>();
 	}
 	// getters and setters
 	public int getId(){

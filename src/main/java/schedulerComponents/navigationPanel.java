@@ -4,19 +4,28 @@
  */
 package schedulerComponents;
 
+import java.util.List;
+import com.mycompany.process.Process;
+import com.mycompany.process.Queue;
+
 /**
  *
  * @author LENOVO
  */
 public class navigationPanel extends javax.swing.JPanel {
-	private String speed; 
+	private final processConfig proConfig;
+	private mlfqConfig queueConfig;
+
 
     /**
      * Creates new form navigationPanel
      */
     public navigationPanel() {
         initComponents();
+	proConfig = new processConfig();
+	queueConfig = new mlfqConfig();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -89,7 +98,15 @@ public class navigationPanel extends javax.swing.JPanel {
         }// </editor-fold>//GEN-END:initComponents
 
     private void startSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSimulationActionPerformed
-	    speed = (String) clockSpeed.getSelectedItem();
+		System.out.println("HI");
+		List<Process> processList = proConfig.getProcessList();
+		List<Queue> queueList = queueConfig.getQueueList();
+		for (Process process : processList){
+			System.out.println(process.id);
+		}
+		for (Queue queue : queueList){
+			System.out.println(queue.id);
+		}
     }//GEN-LAST:event_startSimulationActionPerformed
 
     private void stopSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopSimulationActionPerformed
