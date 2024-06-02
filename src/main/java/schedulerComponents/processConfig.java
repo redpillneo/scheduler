@@ -23,7 +23,7 @@ import javax.swing.JViewport;
  */
 public class processConfig extends javax.swing.JPanel {
 	public List<processPanel>processList = new ArrayList<>();
-	public List<Process> processes = new ArrayList<>();
+	public static List<Process> processes = new ArrayList<>();
     /**
      * Creates new form processConfig1
      */
@@ -244,10 +244,10 @@ public class processConfig extends javax.swing.JPanel {
 		for (Process process : processes) {
 		    processInfo.append(process.toString()).append("\n");
 		    processPanel newProcess = new processPanel();
-		    newProcess.processID.setText(Integer.toString(process.id));
-		    newProcess.arrivalTime.setText(Integer.toString(process.arrivalTime));
-		    newProcess.burstTime.setText(Integer.toString(process.burstTime));
-		    newProcess.priority.setText(Integer.toString(process.priority));
+		    newProcess.processID.setText(Integer.toString(process.getProcessId()));
+		    newProcess.arrivalTime.setText(Integer.toString(process.getArrivalTime()));
+		    newProcess.burstTime.setText(Integer.toString(process.getBurstTime()));
+		    newProcess.priority.setText(Integer.toString(process.getPriority()));
 		    processList.add(newProcess);
 		}
 		
@@ -259,7 +259,6 @@ public class processConfig extends javax.swing.JPanel {
 		}
 		processObjectPane.revalidate();
         }//GEN-LAST:event_generateProcessActionPerformed
-
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton clearProcess;

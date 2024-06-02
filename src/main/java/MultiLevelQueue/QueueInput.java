@@ -45,9 +45,9 @@ public class QueueInput {
             System.out.println("Enter Priority for queue " + i + ":");
             int priority = scanner.nextInt();
             
-            system.initializeQueue(i, algorithm, priority);
+            system.initializeQueue(i, algorithm, priority, i);
             
-            System.out.println("QUEUE ADDED WITH ID, ALGO, PRIO: " +i +" " +algorithm +" " +priority);
+            System.out.println("QUEUE ADDED WITH ID, ALGO, PRIO, ALLOC: " +i +" " +algorithm +" " +priority);
         }
         
         QueueExec.queueExec(system, entryPolicy, prioPolicy);

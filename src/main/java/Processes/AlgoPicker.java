@@ -35,10 +35,10 @@ public class AlgoPicker {
         int algo = currentQueue.getAlgorithm();
         switch(algo){
             case 1 -> fcfs.fcfsAlgo(currentQueue);
-            case 2 -> sjf.sjfAlgo();
+            case 2 -> sjf.sjfAlgo(currentQueue);
             case 3 -> sjrf.sjrfAlgo(currentQueue);
-            case 4 -> npp.nppAlgo();
-            case 5 -> pp.ppAlgo();
+            case 4 -> npp.nppAlgo(currentQueue);
+            case 5 -> pp.ppAlgo(currentQueue);
             case 6 -> rr.setQuantum();
             default -> System.out.println("Invalid Input!");
         }

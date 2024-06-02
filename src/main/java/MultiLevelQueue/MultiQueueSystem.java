@@ -20,15 +20,8 @@ public class MultiQueueSystem {
         }
     }
 
-    public void initializeQueue(int index, int algorithm, int priority) {
+    public void initializeQueue(int index, int algorithm, int priority, int allocation) {
         if (index >= 0 && index < numberOfQueues) {
-            int allocation = 0;
-            if(index == 0){
-                allocation = 4;
-            }
-            else {
-                allocation = (int)(Math.pow(numberOfQueues, 2));
-            }
             queues.set(index, new SchedulerQueue(index, algorithm, priority, allocation));
         } else {
             System.out.println("Invalid queue index.");
@@ -50,7 +43,10 @@ public class MultiQueueSystem {
         }
     }
 
-    public static void transferToNext(int queueIndex) {
+    public static boolean transferToNext(int queueIndex, boolean isLowest) {
+        if (queueIndex == numberOfQueues-1) {
+            isLowest = true;
+        }
         if (queueIndex >= 0 && queueIndex < numberOfQueues - 1) {
             SchedulerQueue currentQueue = queues.get(queueIndex);
             SchedulerQueue nextQueue = queues.get(queueIndex + 1);
@@ -67,10 +63,11 @@ public class MultiQueueSystem {
         } else {
             System.out.println("Invalid queue index or no next queue available.");
         }
+        return isLowest;
     }
 
     public static boolean transferToPrevious(int queueIndex, boolean isHighest) {
-        if (queueIndex == 1) {
+        if (queueIndex == 0) {
             isHighest = true;
         }
         
@@ -110,5 +107,23 @@ public class MultiQueueSystem {
     
     public void sortQueues() {
         Collections.sort(queues, Comparator.comparingInt(SchedulerQueue::getPriority));
+        for(int i = 0; i < numberOfQueues; i++){
+            switch (i) {
+                case 0 -> {
+                    queues.get(i).setAllocation(4);
+                    queues.get(i).setIndex(i);
+                }
+                case 1 -> {
+                    queues.get(i).setAllocation(8);
+                    queues.get(i).setIndex(i);
+                }
+                case 2 -> {
+                    queues.get(i).setAllocation(16);
+                    queues.get(i).setIndex(i);
+                }
+                default -> {
+                }
+            }
+        }
     }
 }
