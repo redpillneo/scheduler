@@ -72,23 +72,11 @@ public class Queue {
 	}
 	
 	public boolean addProcess(Process p) {
-		try {
-			//TODO Code to add process to the queue
-			return true;
-		}
-		catch(Exception e) {
-			return false;
-		}
+		return processes.add(p);
 	}
 	
 	public boolean removeProcess(Process p) {
-		try {
-			//TODO Code to remove process from the queue
-			return true;
-		}
-		catch(Exception e) {
-			return false;
-		}
+		return processes.remove(p);
 	}
 	
 	public boolean isEmpty() {
