@@ -42,7 +42,7 @@ public class ProcessGanttChart extends JFrame{
         plot.setRenderer(renderer);
         
         panel = new ChartPanel(chart);  
-		setContentPane(panel);  
+		setContentPane(panel);
    }  
 	
 	private IntervalCategoryDataset getCategoryDataset() {

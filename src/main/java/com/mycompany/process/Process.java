@@ -2,16 +2,18 @@ package com.mycompany.process;
 
 
 public class Process {
-    public int id;
-    public int burstTime;
-    public int arrivalTime;
-    public int priority;
+    private int id;
+    private int burstTime;
+    private int arrivalTime;
+    private int priority;
+    private boolean finished;
 
     public Process(int id, int burstTime, int arrivalTime, int priority) {
         this.id = id;
         this.burstTime = burstTime;
         this.arrivalTime = arrivalTime;
         this.priority = priority;
+        this.finished = false;
     }
 
     @Override
@@ -38,6 +40,9 @@ public class Process {
     }
     public int getPriority(){
         return priority;
+    }
+    public boolean isFinished() {
+    	return finished;
     }
 }
 

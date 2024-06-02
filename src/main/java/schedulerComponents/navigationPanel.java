@@ -88,7 +88,8 @@ public class navigationPanel extends javax.swing.JPanel {
         }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
+        // TODO handling code when user presses 'start simulation' button
+    	
     	ganttChart.showGanttChart();
 		
     }//GEN-LAST:event_jToggleButton2ActionPerformed
