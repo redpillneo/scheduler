@@ -9,6 +9,7 @@ package schedulerComponents;
  * @author LENOVO
  */
 public class navigationPanel extends javax.swing.JPanel {
+	private String speed; 
 
     /**
      * Creates new form navigationPanel
@@ -27,27 +28,27 @@ public class navigationPanel extends javax.swing.JPanel {
         private void initComponents() {
 
                 jToggleButton1 = new javax.swing.JToggleButton();
-                speed = new javax.swing.JComboBox<>();
-                jToggleButton2 = new javax.swing.JToggleButton();
-                jToggleButton3 = new javax.swing.JToggleButton();
+                clockSpeed = new javax.swing.JComboBox<>();
+                startSimulation = new javax.swing.JToggleButton();
+                stopSimulation = new javax.swing.JToggleButton();
                 jSeparator2 = new javax.swing.JSeparator();
                 jSeparator3 = new javax.swing.JSeparator();
 
                 jToggleButton1.setText("jToggleButton1");
 
-                speed.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10ms", "50ms", "100ms", "1s" }));
+                clockSpeed.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10ms", "50ms", "100ms", "1s" }));
 
-                jToggleButton2.setText("Start Simulation");
-                jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+                startSimulation.setText("Start Simulation");
+                startSimulation.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jToggleButton2ActionPerformed(evt);
+                                startSimulationActionPerformed(evt);
                         }
                 });
 
-                jToggleButton3.setText("STOP");
-                jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+                stopSimulation.setText("STOP");
+                stopSimulation.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jToggleButton3ActionPerformed(evt);
+                                stopSimulationActionPerformed(evt);
                         }
                 });
 
@@ -57,15 +58,15 @@ public class navigationPanel extends javax.swing.JPanel {
                         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(speed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(clockSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton3)
+                                .addComponent(stopSimulation)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton2)
+                                .addComponent(startSimulation)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
                 layout.setVerticalGroup(
@@ -75,33 +76,44 @@ public class navigationPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jToggleButton2)
+                                        .addComponent(startSimulation)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jToggleButton3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(speed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(stopSimulation, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(clockSpeed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
 
-                speed.getAccessibleContext().setAccessibleName("");
-                jToggleButton2.getAccessibleContext().setAccessibleName("startSimulationButton");
-                jToggleButton3.getAccessibleContext().setAccessibleName("stop button");
+                clockSpeed.getAccessibleContext().setAccessibleName("");
+                startSimulation.getAccessibleContext().setAccessibleName("startSimulationButton");
+                stopSimulation.getAccessibleContext().setAccessibleName("stop button");
         }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    private void startSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSimulationActionPerformed
+	    speed = (String) clockSpeed.getSelectedItem();
+    }//GEN-LAST:event_startSimulationActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void stopSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopSimulationActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_stopSimulationActionPerformed
+
+    public int getClockSpeed(){
+	    int speedInt;
+	    speedInt = extractInteger(speed);
+	    return speedInt;
+    }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        public javax.swing.JComboBox<String> clockSpeed;
         private javax.swing.JSeparator jSeparator2;
         private javax.swing.JSeparator jSeparator3;
         private javax.swing.JToggleButton jToggleButton1;
-        private javax.swing.JToggleButton jToggleButton2;
-        private javax.swing.JToggleButton jToggleButton3;
-        private javax.swing.JComboBox<String> speed;
+        public javax.swing.JToggleButton startSimulation;
+        private javax.swing.JToggleButton stopSimulation;
         // End of variables declaration//GEN-END:variables
+
+	private int extractInteger(String str) {
+		String numericString = str.replaceAll("[^\\d]", "");
+		return Integer.parseInt(numericString);
+	}
 }

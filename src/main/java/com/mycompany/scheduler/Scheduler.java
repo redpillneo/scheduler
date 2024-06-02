@@ -10,14 +10,18 @@ import com.formdev.flatlaf.FlatLightLaf;
 
 
 public class Scheduler {
+	private int speed;
+//	get the time from the gui
     public static void main(String[] args) {
 	    FlatLightLaf.setup();
 //		for(LookAndFeelInfo lafInfo:UIManager.getInstalledLookAndFeels()){
 //			System.out.println(lafInfo.getClassName());
 //		}
-
 	    mainFrame mainFrame = new mainFrame();
 	    mainFrame.setVisible(true);
+	    
+	    speed = getClockSpeed();
+	    
     }
 }
 
