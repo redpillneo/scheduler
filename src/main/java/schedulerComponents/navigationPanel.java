@@ -97,9 +97,8 @@ public class navigationPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_stopSimulationActionPerformed
 
     public int getClockSpeed(){
-	    int speedInt;
-	    speedInt = extractInteger(speed);
-	    return speedInt;
+	    String selectedSpeed = (String) clockSpeed.getSelectedItem();
+	    return extractInteger(selectedSpeed);
     }
 
 

@@ -20,7 +20,7 @@ public class Scheduler {
 	    mainFrame mainFrame = new mainFrame();
 	    mainFrame.setVisible(true);
 	    
-	    speed = getClockSpeed();
+	    speed = navigationPanel.getClockSpeed();
 	    
     }
 }
