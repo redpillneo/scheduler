@@ -235,7 +235,7 @@ public class mlfqConfig extends javax.swing.JPanel {
 	    for (Queue queue: queues){
 		    queueInfo.append(queue.toString()).append("\n");
 		    queuePanel newQueue = new queuePanel();
-		    newQueue.queueID.setText(Integer.toString(queue.id));
+		    newQueue.queueID.setText(Integer.toString(queue.getIndex()));
 		    queueList.add(newQueue);
 		    
 	    }

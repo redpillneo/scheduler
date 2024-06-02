@@ -96,6 +96,7 @@ public class navigationPanel extends javax.swing.JPanel {
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         // TODO add your handling code here:
+    	System.out.println(mlfqConfig.getPriorityPolicy());
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
 

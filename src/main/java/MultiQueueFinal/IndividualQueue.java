@@ -5,6 +5,7 @@
 package MultiQueueFinal;
 
 import java.util.ArrayList;
+import com.mycompany.process.Process;
 
 /**
  *
@@ -17,7 +18,7 @@ public class IndividualQueue {
     public static int ccTime = 0;
     public int entryQueue = 0;
     
-    public static ArrayList<Processes.Process> queue = new ArrayList<>();
+    public static ArrayList<Process> queue = new ArrayList<>();
 
     public IndividualQueue(int index, int algorithm, int allocatedTime) {
         this.index = index;
@@ -45,15 +46,15 @@ public class IndividualQueue {
     public void setEntryQueue(int entryQueue){
         this.entryQueue = entryQueue;
     }
-    public ArrayList<Processes.Process> getQueue() {
+    public ArrayList<Process> getQueue() {
         return queue;
     }
 
-    public boolean addProcess(Processes.Process p) {
+    public boolean addProcess(Process p) {
             return queue.add(p);
     }
 
-    public boolean removeObject(Processes.Process p) {
+    public boolean removeObject(Process p) {
         return queue.remove(p);
     }
     
@@ -61,21 +62,21 @@ public class IndividualQueue {
         this.allocatedTime = allocatedTime;
     }
 
-    public Processes.Process poll() {
+    public Process poll() {
         if (queue.isEmpty()) {
             return null;
         }
         return queue.remove(0);
     }
 
-    public Processes.Process peek() {
+    public Process peek() {
         if (queue.isEmpty()) {
             return null;
         }
         return queue.get(0);
     }
 
-    public boolean removeProcess(Processes.Process p) {
+    public boolean removeProcess(Process p) {
         return queue.remove(p);
     }
     
