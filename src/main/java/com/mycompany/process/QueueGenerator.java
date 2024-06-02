@@ -17,7 +17,7 @@ public class QueueGenerator {
 		List<Queue> queues = new ArrayList<>();
 		for (int i = 0; i < numberOfQueue; i++){
 			int id = i +1;
-			Queue queue = new Queue(id, null, 0);
+			Queue queue = new Queue(id, 0, 0); //TODO make sure na depende sa algorithm yung second parameter (algorithm)
 			queues.add(queue);
 		}
 		return queues;

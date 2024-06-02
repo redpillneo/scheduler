@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class mlfqConfig extends javax.swing.JPanel {
 	public List<queuePanel> queueList = new ArrayList();
-	public List<Queue> queues = new ArrayList<>();
+	public static List<Queue> queues = new ArrayList<>();
 
     /**
      * Creates new form mlfqConfig1
@@ -235,7 +235,7 @@ public class mlfqConfig extends javax.swing.JPanel {
 	    for (Queue queue: queues){
 		    queueInfo.append(queue.toString()).append("\n");
 		    queuePanel newQueue = new queuePanel();
-		    newQueue.queueID.setText(Integer.toString(queue.id));
+		    newQueue.queueID.setText(Integer.toString(queue.getIndex()));
 		    queueList.add(newQueue);
 		    
 	    }
@@ -259,6 +259,10 @@ public class mlfqConfig extends javax.swing.JPanel {
 
     private void priorityPolicyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priorityPolicyActionPerformed
         // TODO add your handling code here:
+    	javax.swing.JComboBox<String> cb = (javax.swing.JComboBox<String>) evt.getSource();
+    	priorityPolicyValue = (String)cb.getSelectedItem();
+    	System.out.println("Set Priority Policy: " + priorityPolicyValue);
+    	
     }//GEN-LAST:event_priorityPolicyActionPerformed
 
     private void entryQueueNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entryQueueNoActionPerformed
@@ -269,12 +273,25 @@ public class mlfqConfig extends javax.swing.JPanel {
 		nQueueInputActionPerformed(evt);
 		
         }//GEN-LAST:event_nQueueInputActionPerformed
+        
+        public static int getEntryQueue() {
+        	return Integer.parseInt(entryQueueNo.getText());
+        }
+        
+        public static String getPriorityPolicy() {
+        	if(priorityPolicyValue != null) {
+        		return priorityPolicyValue;
+        	}
+        	else {
+        		return (String) priorityPolicy.getSelectedItem();
+        	}
+        }
 
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JLabel Queues;
         private javax.swing.JButton clearQueues;
-        public javax.swing.JTextField entryQueueNo;
+        public static javax.swing.JTextField entryQueueNo;
         private javax.swing.JButton generateQueues;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel2;
@@ -289,8 +306,9 @@ public class mlfqConfig extends javax.swing.JPanel {
         private javax.swing.JTextArea jTextArea1;
         private javax.swing.JTextField jTextField1;
         private javax.swing.JTextField nQueueInput;
-        public javax.swing.JComboBox<String> priorityPolicy;
+        public static javax.swing.JComboBox<String> priorityPolicy;
         private javax.swing.JScrollPane queueObjectPane;
         public javax.swing.JPanel queueObjectsPanel;
+        private static String priorityPolicyValue;
         // End of variables declaration//GEN-END:variables
 }
