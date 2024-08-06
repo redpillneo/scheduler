@@ -1,0 +1,13 @@
+com\mycompany\process\QueueGenerator.class
+com\mycompany\process\Queue.class
+schedulerComponents\queuePanel1.class
+schedulerComponents\QueuePolicy.class
+schedulerComponents\processConfig$4.class
+schedulerComponents\queuePanel$1.class
+schedulerComponents\queuePanel$2.class
+schedulerComponents\turnArroundTimeBlock1.class
+schedulerComponents\mlfqConfig$6.class
+schedulerComponents\responseTimeBlock.class
+schedulerComponents\MLFQScheduler.class
+schedulerComponents\queuePanel$3.class
+schedulerComponents\waitingTimeBlock.class
