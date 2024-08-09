@@ -34,6 +34,8 @@ public class queuePanel extends javax.swing.JPanel {
                 quantumInput = new javax.swing.JTextField();
                 queueID = new javax.swing.JLabel();
 
+                quantumInput.setEnabled(false);
+
                 jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
                 jTextField1.setText("Queue");
@@ -123,7 +125,6 @@ public class queuePanel extends javax.swing.JPanel {
         private void schedAlgoOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_schedAlgoOptionActionPerformed
                 // TODO add your handling code here:
         }//GEN-LAST:event_schedAlgoOptionActionPerformed
-
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JFrame jFrame1;

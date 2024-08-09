@@ -90,7 +90,7 @@ public class performanceAnalysis extends javax.swing.JPanel {
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JLabel jLabel1;
         private javax.swing.JPanel jPanel4;
-        private schedulerComponents.navigationPanel navigationPanel1;
+        public schedulerComponents.navigationPanel navigationPanel1;
         private schedulerComponents.waitingTimeBlock performanceBlock1;
         private schedulerComponents.waitingTimeBlock performanceBlock2;
         private schedulerComponents.waitingTimeBlock performanceBlock3;

@@ -87,10 +87,10 @@ public class mainFrame extends javax.swing.JFrame {
 	}
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
-        private schedulerComponents.ganttChart ganttChart1;
-        private schedulerComponents.mlfqConfig mlfqConfig1;
-        private schedulerComponents.performanceAnalysis performanceAnalysis2;
-        private schedulerComponents.processConfig processConfig2;
+         schedulerComponents.ganttChart ganttChart1;
+        public schedulerComponents.mlfqConfig mlfqConfig1;
+        public schedulerComponents.performanceAnalysis performanceAnalysis2;
+        public schedulerComponents.processConfig processConfig2;
         private schedulerComponents.queuesChart queuesChart1;
         // End of variables declaration//GEN-END:variables
 }

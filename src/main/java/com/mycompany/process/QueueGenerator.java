@@ -17,7 +17,7 @@ public class QueueGenerator {
 		List<Queue> queues = new ArrayList<>();
 		for (int i = 0; i < numberOfQueue; i++){
 			int id = i +1;
-			Queue queue = new Queue(id, null, 0);
+			Queue queue = new Queue(id, "SRTF", 0);
 			queues.add(queue);
 		}
 		return queues;
