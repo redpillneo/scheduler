@@ -47,5 +47,4 @@ public class Queue {
 	public String toString(){
 		return "Queue ID:" + id + ", Algorithm: " + schedAlgo + ", Quantum: " + quantum;
 	}
-	
 }

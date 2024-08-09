@@ -239,8 +239,6 @@ public class mlfqConfig extends javax.swing.JPanel {
 		    queueList.add(newQueue);
 		    
 	    }
-	    System.out.println(queueInfo);
-	    // displaying queues
 	    for(queuePanel panel: queueList){
 		    queueObjectsPanel.add(panel);
 		    queueObjectsPanel.revalidate();

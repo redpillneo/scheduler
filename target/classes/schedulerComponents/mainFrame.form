@@ -26,17 +26,19 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="processConfig1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="mlfqConfig1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="processConfig2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="mlfqConfig1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="queuesChart1" max="32767" attributes="0"/>
-                  <Component id="ganttChart1" pref="1384" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="performanceAnalysis2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="ganttChart1" pref="1379" max="32767" attributes="0"/>
+                  <Component id="performanceAnalysis2" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -45,30 +47,28 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="processConfig1" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Component id="performanceAnalysis2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ganttChart1" min="-2" max="-2" attributes="0"/>
+                      <Component id="ganttChart1" pref="226" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="processConfig2" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="queuesChart1" min="-2" pref="413" max="-2" attributes="0"/>
-                  <Component id="mlfqConfig1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="queuesChart1" max="32767" attributes="0"/>
+                  <Component id="mlfqConfig1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="240" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="schedulerComponents.processConfig" name="processConfig1">
-    </Component>
     <Component class="schedulerComponents.mlfqConfig" name="mlfqConfig1">
     </Component>
     <Component class="schedulerComponents.ganttChart" name="ganttChart1">
@@ -76,6 +76,8 @@
     <Component class="schedulerComponents.queuesChart" name="queuesChart1">
     </Component>
     <Component class="schedulerComponents.performanceAnalysis" name="performanceAnalysis2">
+    </Component>
+    <Component class="schedulerComponents.processConfig" name="processConfig2">
     </Component>
   </SubComponents>
 </Form>

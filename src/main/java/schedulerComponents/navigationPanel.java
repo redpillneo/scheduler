@@ -98,15 +98,7 @@ public class navigationPanel extends javax.swing.JPanel {
         }// </editor-fold>//GEN-END:initComponents
 
     private void startSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startSimulationActionPerformed
-		System.out.println("HI");
-		List<Process> processList = proConfig.getProcessList();
-		List<Queue> queueList = queueConfig.getQueueList();
-		for (Process process : processList){
-			System.out.println(process.id);
-		}
-		for (Queue queue : queueList){
-			System.out.println(queue.id);
-		}
+
     }//GEN-LAST:event_startSimulationActionPerformed
 
     private void stopSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopSimulationActionPerformed
