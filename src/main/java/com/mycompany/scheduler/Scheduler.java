@@ -29,17 +29,24 @@ public class Scheduler {
 			mainFrame.performanceAnalysis2.navigationPanel1.startSimulation.addActionListener(new java.awt.event.ActionListener() {
 				@Override
 				public void actionPerformed(java.awt.event.ActionEvent evt){    	
-					for (Process p: mainFrame.processConfig2.processes){
-						System.out.println(p.toString());
-					}
-				// 	for (Queue q: queueList){
+					List<Process> processList = mainFrame.processConfig2.processes;
+					List<Queue> queueList = mainFrame.mlfqConfig1.queues;
+
+					
+
+				// 	for (Process p: mainFrame.processConfig2.processes){
+				// 		System.out.println(p.toString());
+				// 	}
+				// // 	for (Queue q: queueList){
+				// // 		System.out.println(q.toString());
+				// // 	}
+				// 	for (Queue q: mainFrame.mlfqConfig1.queues){
 				// 		System.out.println(q.toString());
 				// 	}
-					for (Queue q: mainFrame.mlfqConfig1.queues){
-						System.out.println(q.toString());
-					}
 				}
 			});
+
+
 		}
 
 }
