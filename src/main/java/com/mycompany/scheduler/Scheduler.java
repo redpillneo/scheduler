@@ -32,22 +32,22 @@ public class Scheduler {
 					List<Process> processList = mainFrame.processConfig2.processes;
 					List<Queue> queueList = mainFrame.mlfqConfig1.queues;
 
-					
-
-				// 	for (Process p: mainFrame.processConfig2.processes){
-				// 		System.out.println(p.toString());
-				// 	}
-				// // 	for (Queue q: queueList){
-				// // 		System.out.println(q.toString());
-				// // 	}
-				// 	for (Queue q: mainFrame.mlfqConfig1.queues){
-				// 		System.out.println(q.toString());
-				// 	}
+					// scheduling algorithm
+					startScheduler(processList, queueList);
 				}
 			});
-
-
 		}
 
+		public static void startScheduler(List<Process> proList, List<Queue> queList){
+			// add the algorithm
+			for(Process p: proList){
+				System.out.println(p.toString());
+			}
+			for(Queue q: queList){
+				System.out.println(q.toString());
+			}
+			System.out.println("whatchamakalit");
+
+		}
 }
 
